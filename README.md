@@ -408,13 +408,21 @@ You should see something like:
 ### Reading a number from the blockhain
 
 To read the number from the blockchain, call the retrieve method of the Storage contract instance.
-```truffle(development)> let i = await instance.retrieve()```
+```
+truffle(development)> let i = await instance.retrieve()
+```
 This should return:
-```undefined```
+```
+undefined
+```
 The result of the call to retrieve is a BN (big number). Call its .toNumber method to see the value:
-```truffle(development)> i.toNumber()```
+```
+truffle(development)> i.toNumber()
+```
 You should see the number you stored.
-```1234```
+```
+1234
+```
 
 ## Summary
 Now you have the tools you need to launch a local Avalanche network, create a truffle project, as well as create, compile, deploy and interact with Solidity contracts.
