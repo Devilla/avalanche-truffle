@@ -124,7 +124,8 @@ module.exports = {
      },
      network_id: "*",
      gas: 3000000,
-     gasPrice: 470000000000
+     gasPrice: 470000000000,
+     timeoutBlocks: 60 // must be greater than Web3's default (50)
    }
   }
 };
