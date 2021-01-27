@@ -102,13 +102,21 @@ A five node Avalanche network is running on your machine. When you want to exit 
 Open a new terminal tab to so we can create a truffle directory and install some further dependencies.
 
 First, navigate to the directory within which you intend to create your truffle working directory:
-```cd /path/to/directory```
+```
+cd /path/to/directory
+```
 Create and enter a new directory named truffle:
-```mkdir truffle; cd truffle```
+```
+mkdir truffle; cd truffle
+```
 Use npm to install web3, which is a library through which we can talk to the EVM:
-```npm install web3 -s```
+```
+npm install web3 -s
+```
 We'll use web3 to set an HTTP Provider which is how web3 will speak to the EVM. Lastly, create a boilerplace truffle project:
-```truffle init```
+```
+truffle init
+```
 Update truffle-config.js
 One of the files created when you ran truffle init is truffle-config.js. Add the following to truffle-config.js.
 ```
@@ -193,17 +201,29 @@ When deploying smart contracts to the C-Chain, truffle will default to the first
 
 ### Create an account
 Truffle has a very useful console which we can use to interact with the blockchain and our contract. Open the console:
-```truffle console --network development```
+```
+truffle console --network development
+```
 Then, in the console, create the account:
-```truffle(development)> let account = web3.eth.personal.newAccount()```
+```
+truffle(development)> let account = web3.eth.personal.newAccount()
+```
 This returns:
-```undefined```
+```
+undefined
+```
 Print the account:
-```truffle(development)> account```
+```
+truffle(development)> account
+```
 This prints the account:
-```'0x090172CD36e9f4906Af17B2C36D662E69f162282'```
+```
+'0x090172CD36e9f4906Af17B2C36D662E69f162282'
+```
 Exit the truffle console:
-```truffle(development)> .exit```
+```
+truffle(development)> .exit
+```
 
 ### Fund your account
 Follow the steps in the Transfer AVAX Between X-Chain and C-Chain tutorial to fund the newly created account. You'll need to send at least 135422040 nAVAX to the account to cover the cost of contract deployments.
@@ -227,7 +247,9 @@ main()
 ```
 
 Run the script to unlock your account.
-```node web3_script.js```
+```
+node web3_script.js
+```
 This should return something like:
 ```
 [ '0x34Cb796d4D6A3e7F41c4465C65b9056Fe2D3B8fD' ]
@@ -236,7 +258,9 @@ true
 
 ## Run Migrations
 Now everything is in place to run migrations and deploy the Storage contract:
-```truffle migrate --network development```
+```
+truffle migrate --network development
+```
 You should see:
 ```
 Migrations dry-run (simulation)
@@ -373,17 +397,30 @@ Error:  *** Deployment Failed ***
 ```
 ## Interacting with your contract
 Now the Storage contract has been deployed. Let's write a number to the blockchain and then read it back. Open the truffle console again:
-```truffle console --network development```
+```
+truffle console --network development
+```
 Get an instance of the deployed Storage contract:
-```truffle(development)> let instance = await Storage.deployed()```
+```
+truffle(development)> let instance = await Storage.deployed()
+```
 This returns:
-```undefined```
+```
+undefined
+```
 ### Writing a number to the blockchain
 Now that you have an instance of the Storage contract, call it's store method and pass in a number to write to the blockchain.
-```truffle(development)> instance.store(1234)```
+```
+truffle(development)> instance.store(1234)
+```
 If you see this error:
-```Error: Returned error: authentication needed: password or unlock```
-Then run this again: ```node web3_script.js```
+```
+Error: Returned error: authentication needed: password or unlock
+```
+Then run this again: 
+```
+node web3_script.js
+```
 You should see something like:
 ```
 {
