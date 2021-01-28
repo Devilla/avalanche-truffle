@@ -1,10 +1,10 @@
-const Storage = artifacts.require("Storage");
+const Dai = artifacts.require("Dai");
+const EthSwap = artifacts.require("EthSwap");
 
-module.exports = function (deployer) {
-  deployer.deploy(Storage);
+module.exports = async function (deployer) {
 
   // Deploy Dai
-  await deployer.deploy(Dai, '5777');
+  await deployer.deploy(Dai, '43113');
   const dai = await Dai.deployed();
 
   //Deploy EthSwap with Dai
