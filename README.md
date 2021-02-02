@@ -220,7 +220,7 @@ This prints the account:
 ```
 '0x090172CD36e9f4906Af17B2C36D662E69f162282'
 ```
-Unlock your account:
+### Unlock your account:
 ```
 truffle(development)> await web3.eth.personal.unlockAccount(account[0])
 true
